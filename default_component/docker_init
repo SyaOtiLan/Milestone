@@ -1,0 +1,8 @@
+#!/bin/bash
+mkdir -p /proc
+mount -t proc none /proc
+mount -t devtmpfs none /dev
+/bin/vguest_vsock
+/bin/qemu_init.sh
+# /usr/local/bin/python /app/test.py
+exec /bin/bash
